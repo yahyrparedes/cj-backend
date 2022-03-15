@@ -19,6 +19,7 @@ from .serializers import SignUpCompanySerializer, CompanySerializer
 
 
 class SignInCompanyApiView(APIView):
+    permission_classes = ()
     serializer_class = AuthTokenSerializer
 
     def post(self, request, *args, **kwargs):
