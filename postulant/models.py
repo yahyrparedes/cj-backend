@@ -11,8 +11,8 @@ from users.models import User
 class Postulant(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True,
                                 on_delete=models.RESTRICT)
-    gender = models.ForeignKey(Gender, on_delete=models.CASCADE, blank=True)
-    document_type = models.ForeignKey(DocumentType, on_delete=models.CASCADE, blank=True)
+    gender = models.ForeignKey(Gender, on_delete=models.CASCADE, blank=True, null=True)
+    document_type = models.ForeignKey(DocumentType, on_delete=models.CASCADE, blank=True, null=True)
     document = models.CharField(max_length=15, unique=True, blank=True)
     date_of_birth = models.DateField(blank=True, null=True)
     avatar = models.ImageField(

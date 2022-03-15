@@ -58,7 +58,9 @@ class SignUpPostulantApiView(CreateAPIView):
     def create_postulant(self, data):
         user_data = {
             'email': data.pop('email'),
-            'password': data.pop('password')
+            'password': data.pop('password'),
+            'first_name': data.pop('name'),
+            'last_name': data.pop('last_name')
         }
 
         user = User.objects.create_user(**user_data)
@@ -74,4 +76,4 @@ class PostulantProfileView(RetrieveUpdateAPIView):
     permission_classes = (IsPostulant,)
 
     def get_object(self, *args, **kwargs):
-        return self.request.user.company
+        return self.request.user.postulant

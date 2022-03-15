@@ -5,9 +5,9 @@ from .models import Postulant
 
 class IsPostulant(IsAuthenticated):
     """
-    Allows access only to users with a company.
+    Allows access only to users with a postulant.
 
-    Checks if the user is authenticated, and then check if has a company
+    Checks if the user is authenticated, and then check if has a postulant
     associated a su model.
     """
 
@@ -23,9 +23,9 @@ class IsPostulant(IsAuthenticated):
 
 class IsPostulantAndActive(IsPostulant):
     """
-    Allows access only to activated company.
+    Allows access only to activated postulant.
 
-    Checks if the company has activated they account.
+    Checks if the postulant has activated they account.
     """
 
     def has_permission(self, request, view):
