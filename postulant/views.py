@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from rest_framework import status
+from rest_framework import status, parsers
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
@@ -17,8 +17,8 @@ from users.models import User
 
 
 class SignInPostulantApiView(APIView):
-    permission_classes = (AllowAny,)
     serializer_class = AuthTokenSerializer
+    permission_classes = ()
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
@@ -73,7 +73,7 @@ class SignUpPostulantApiView(CreateAPIView):
 class PostulantProfileView(RetrieveUpdateAPIView):
     model = Postulant
     serializer_class = PostulantSerializer
-    permission_classes = (IsPostulant,)
+    permission_classes = (AllowAny,)
 
     def get_object(self, *args, **kwargs):
         return self.request.user.postulant
