@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "9be7bfb2-ddb2-4377-8ecb-9864f725f7f0",
+		"name": "ConsoleJobs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "signin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"email\": \"company@gmail.com\" ,\n    \"password\": \"Lima123456\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/company/signin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"company",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signinup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"company@gmail.com\" ,\n    \"password\": \"Lima123456\" ,\n    \"ruc\": \"10738840718\" ,\n    \"business_name\": \"YAHYR ENRIQUE PAREDES ARTEAGA\",\n    \"tradename\":  \"KillerYpa\",\n    \"description\":  \"Empresa de videojuegos!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/company/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"company",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}
