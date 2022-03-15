@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import PermissionDenied
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -14,6 +14,7 @@ from rest_framework.viewsets import GenericViewSet
 from authentication.serializers import AuthTokenSerializer
 from users.models import User
 from .models import Company
+from .permissions import IsCompany
 from .serializers import SignUpCompanySerializer, CompanySerializer
 
 
@@ -75,3 +76,10 @@ class SignUpCompanyApiView(CreateAPIView):
         return company
 
 
+class CompanyProfileView(RetrieveUpdateAPIView):
+    model = Company
+    serializer_class = CompanySerializer
+    permission_classes = (IsCompany,)
+
+    def get_object(self, *args, **kwargs):
+        return self.request.user.company

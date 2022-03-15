@@ -3,97 +3,46 @@ from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.password_validation import validate_password
 from django.utils.translation import gettext_lazy as _
+from rest_framework.validators import UniqueValidator
 
+from commons.serializers import GenderSerializer
+from postulant.models import Postulant
 from users.models import User
 
 
-class AuthCustomTokenSerializer(serializers.Serializer):
-    email = serializers.CharField(
-        label=_("Email"),
-        write_only=True
+class SignUpPostulantSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    email = serializers.EmailField(
+        required=True,
+        max_length=254,
+        validators=[UniqueValidator(queryset=User.objects.all())]
     )
     password = serializers.CharField(
-        label=_("Password"),
-        style={'input_type': 'password'},
-        trim_whitespace=False,
-        write_only=True
-    )
-    token = serializers.CharField(
-        label=_("Token"),
-        read_only=True
-    )
+        required=True,
+        validators=[validate_password],
+        write_only=True,
+        max_length=128, )
+    name = serializers.CharField(required=True, max_length=254)
+    last_name = serializers.CharField(required=True, max_length=254)
 
-    def validate(self, attrs):
-        email = attrs.get('email')
-        password = attrs.get('password')
-
-        if email and password:
-            user = authenticate(request=self.context.get('request'),
-                                username=email, password=password)
-
-            if not user:
-                msg = _('Unable to log in with provided credentials.')
-                raise serializers.ValidationError(msg, code='authorization')
-
-            if not user.is_active:
-                msg = _('Unable to log in with provided credentials.')
-                raise serializers.ValidationError(msg, code='authorization')
-
-        else:
-            msg = _('Must include "username" and "password".')
-            raise serializers.ValidationError(msg, code='authorization')
-            # raise serializers.ValidationError({
-            #     'address': _('Another user has already been registered under this address.')
-            # })
-
-        attrs['user'] = user
-        return attrs
-
-
-class RegisterCustomSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(required=True, )
-    password = serializers.CharField(write_only=True, required=True, validators=[validate_password], )
-    password2 = serializers.CharField(write_only=True, required=True, validators=[validate_password], )
-    token = serializers.CharField(read_only=True, )
-
-    def validate_email(self, value):  # validacion especifica
-        if User.objects.filter(email__iexact=value).exists():
-            raise serializers.ValidationError({'email': 'Email exist!'})
-
-        return value.lower()
-
-    def validate(self, attrs):  # todos los campos
-        if attrs['password'] != attrs['password2']:
-            raise serializers.ValidationError({'password': "Password fields didn't match"})
-
-        return attrs
-
-    def create(self, validated_data):
-        user = User.objects.create(email=validated_data['email'],
-                                   first_name=validated_data['first_name'],
-                                   last_name=validated_data['last_name'], )
-        user.set_password(validated_data['password'])
-        user.save()
-
-        token, created = Token.objects.get_or_create(user=user)
-        user.token = token
-        return user
+    def to_representation(self, instance):
+        # HACK: Overwrite User fields into the client instance to represent
+        instance.email = instance.user.email
+        instance.name = instance.user.first_name
+        instance.last_name = instance.user.last_name
+        return super(SignUpPostulantSerializer, self).to_representation(instance)
 
     class Meta:
-        model = User
-        fields = ('password', 'password2', 'email', 'token', 'first_name', 'last_name',)
+        model = Postulant
+        fields = ('id', 'email', 'password', 'name', 'last_name',)
 
 
-class UserCustomSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField()
+class PostulantSerializer(serializers.ModelSerializer):
+    email = serializers.CharField(source='user.email')
+    name = serializers.CharField(source='user.name')
+    last_name = serializers.CharField(source='user.last_name')
 
     class Meta:
-        model = User
-        fields = [
-            'id',
-            'first_name',
-            'last_name',
-            'email',
-            'is_active',
-            'date_joined'
-        ]
+        model = Postulant
+        fields = ('gender', 'document_type', 'document', 'created_at', 'email',
+                  'date_of_birth', 'phone', 'is_active', 'avatar', 'name', 'last_name')
