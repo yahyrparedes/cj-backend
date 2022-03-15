@@ -26,13 +26,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/auth/company/signin",
+									"raw": "{{url}}/api/company/signin",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"auth",
 										"company",
 										"signin"
 									]
@@ -55,13 +54,12 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/api/auth/company/signup",
+									"raw": "{{url}}/api/company/signup",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"api",
-										"auth",
 										"company",
 										"signup"
 									]
@@ -70,6 +68,122 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 8710b471a6c188a60b58ba633c22bbc99fd55031",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/company/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"company",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "postulant",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "signin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"postulant@gmail.com\" ,\n  \"password\": \"Lima123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/postulant/signin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"postulant",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signinup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"postulant@gmail.com\" ,\n    \"password\": \"Lima123456\" ,\n     \"name\":\"Postulant Name\",\n     \"last_name\": \"Postulant LastName\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/postulant/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"postulant",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token a60baba7682b366432cb33f808ae2d8598fa7fc8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/postulant/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"postulant",
+								"profile"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
