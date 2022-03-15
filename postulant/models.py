@@ -13,7 +13,7 @@ class Postulant(models.Model):
                                 on_delete=models.RESTRICT)
     gender = models.ForeignKey(Gender, on_delete=models.CASCADE, blank=True, null=True)
     document_type = models.ForeignKey(DocumentType, on_delete=models.CASCADE, blank=True, null=True)
-    document = models.CharField(max_length=15, unique=True, blank=True)
+    document = models.CharField(max_length=15, blank=True)
     date_of_birth = models.DateField(blank=True, null=True)
     avatar = models.ImageField(
         upload_to="core/static/images/avatar/",
