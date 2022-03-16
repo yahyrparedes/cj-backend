@@ -6,6 +6,7 @@ from django.contrib.auth.password_validation import validate_password
 from django.utils.translation import gettext_lazy as _
 from rest_framework.validators import UniqueValidator
 
+from commons.serializers import AddressSerializer
 from users.models import User
 from .models import Company
 
@@ -21,7 +22,8 @@ class SignUpCompanySerializer(serializers.ModelSerializer):
         required=True,
         validators=[validate_password],
         write_only=True,
-        max_length=128, )
+        max_length=128
+    )
     ruc = serializers.CharField(
         required=True,
         validators=[UniqueValidator(queryset=Company.objects.all())],
@@ -29,23 +31,31 @@ class SignUpCompanySerializer(serializers.ModelSerializer):
     )
     business_name = serializers.CharField(required=True)
     tradename = serializers.CharField(required=True)
-    description = serializers.CharField(required=False)
+    foundation_year = serializers.CharField(max_length=4, required=False)
+    business_sector = serializers.IntegerField(required=False)
+    phone = serializers.CharField(max_length=15, required=False)
+    about = serializers.CharField(required=False)
 
     def to_representation(self, instance):
         # HACK: Overwrite User fields into the client instance to represent
         instance.email = instance.user.email
+        instance.business_sector = instance.business_sector.id
+
         return super(SignUpCompanySerializer, self).to_representation(instance)
 
     class Meta:
         model = Company
-        fields = ('id', 'email', 'password', 'ruc',
-                  'business_name', 'tradename', 'description')
+        fields = ('id', 'email', 'password', 'ruc', 'business_name',
+                  'tradename', 'foundation_year', 'business_sector',
+                  'phone', 'about')
 
 
 class CompanySerializer(serializers.ModelSerializer):
     email = serializers.CharField(source='user.email')
+    address = AddressSerializer()
 
     class Meta:
         model = Company
-        fields = ('ruc', 'business_name', 'tradename', 'created_at', 'email',
-                  'description', 'phone', 'address', 'is_active')
+        fields = ('email', 'ruc', 'business_name', 'tradename',
+                  'phone', 'business_sector', 'about', 'foundation_year',
+                  'address', 'is_active', 'created_at',)

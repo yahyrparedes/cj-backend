@@ -19,7 +19,7 @@ from .serializers import SignUpCompanySerializer, CompanySerializer
 
 
 class SignInCompanyApiView(APIView):
-    permission_classes = ()
+    permission_classes = (AllowAny,)
     serializer_class = AuthTokenSerializer
 
     def post(self, request, *args, **kwargs):
@@ -32,13 +32,6 @@ class SignInCompanyApiView(APIView):
             return Response({'auth_token': token.key, 'company': courier_serializer.data})
         except Company.DoesNotExist:
             raise PermissionDenied
-
-    # def post(self, request, *args, **kwargs):
-    #     serializer = SignInCompanySerializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     user = authenticate(request, email=serializer.data.get('email'), password=serializer.data.get('password'))
-    #     company_serializer = CompanySerializer(user)
-    #     return Response(company_serializer.data)
 
 
 class SignUpCompanyApiView(CreateAPIView):

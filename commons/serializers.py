@@ -12,6 +12,14 @@ class GenderSerializer(serializers.ModelSerializer):
         fields = ('id', 'short_name', 'long_name')
 
 
+class AddressSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = Gender
+        fields = ('id', 'short_name', 'long_name')
+
+
 class DocumentTypeSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
 

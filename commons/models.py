@@ -153,3 +153,16 @@ class District(BaseUbigeoPlace):
     class Meta:
         verbose_name = _('Distrito')
         verbose_name_plural = _('Distritos')
+
+
+class Address(models.Model):
+    class Meta:
+        verbose_name = 'Direccion'
+        verbose_name_plural = 'Direcciones'
+
+    name = models.CharField(max_length=254)
+    reference = models.CharField(max_length=254, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    sub_region = models.ForeignKey(SubRegion, on_delete=models.CASCADE)
+    district = models.ForeignKey(District, on_delete=models.CASCADE)
