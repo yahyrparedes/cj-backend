@@ -4,7 +4,6 @@ from rest_framework import serializers
 from .models import Gender, DocumentType, Country, Region, SubRegion, District
 
 
-# put
 class GenderSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
 
@@ -35,7 +34,6 @@ class RegionSerializer(serializers.ModelSerializer):
         model = Region
         fields = '__all__'
         read_only_fields = [
-
         ]
 
 
@@ -44,7 +42,6 @@ class SubRegionSerializer(serializers.ModelSerializer):
         model = SubRegion
         fields = '__all__'
         read_only_fields = [
-
         ]
 
 
@@ -53,5 +50,4 @@ class DistrictSerializer(serializers.ModelSerializer):
         model = District
         fields = '__all__'
         read_only_fields = [
-
         ]
