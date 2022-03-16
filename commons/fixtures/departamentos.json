@@ -1,0 +1,202 @@
+[
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Amazonas",
+          "ubigeo_code":1,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Áncash",
+          "ubigeo_code":2,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Apurímac",
+          "ubigeo_code":3,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Arequipa",
+          "ubigeo_code":4,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Ayacucho",
+          "ubigeo_code":5,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Cajamarca",
+          "ubigeo_code":6,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Callao",
+          "ubigeo_code":7,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Cusco",
+          "ubigeo_code":8,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Huancavelica",
+          "ubigeo_code":9,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Huánuco",
+          "ubigeo_code":10,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Ica",
+          "ubigeo_code":11,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Junín",
+          "ubigeo_code":12,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "La Libertad",
+          "ubigeo_code":13,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Lambayeque",
+          "ubigeo_code":14,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Lima",
+          "ubigeo_code":15,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Loreto",
+          "ubigeo_code":16,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Madre de Dios",
+          "ubigeo_code":17,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Moquegua",
+          "ubigeo_code":18,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Pasco",
+          "ubigeo_code":19,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Piura",
+          "ubigeo_code":20,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Puno",
+          "ubigeo_code":21,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "San Martín",
+          "ubigeo_code":22,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Tacna",
+          "ubigeo_code":23,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Tumbes",
+          "ubigeo_code":24,
+          "country_id":1
+        }
+      },
+      {
+        "model": "commons.Region",
+        "fields": {
+          "name": "Ucayali",
+          "ubigeo_code":25,
+          "country_id":1
+        }
+      }
+]

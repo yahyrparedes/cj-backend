@@ -1,0 +1,298 @@
+[
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Cercado de Lima",
+      "ubigeo_code": 10101,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Ate",
+      "ubigeo_code": 10102,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Barranci",
+      "ubigeo_code": 10103,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Breña",
+      "ubigeo_code": 10104,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Comas",
+      "ubigeo_code": 10105,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Chorrillos",
+      "ubigeo_code": 10106,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "El Agustino",
+      "ubigeo_code": 10107,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Jesús María",
+      "ubigeo_code": 10108,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "La Molina",
+      "ubigeo_code": 10109,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "La Victoria",
+      "ubigeo_code": 10110,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Lince",
+      "ubigeo_code": 10111,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Magdalena del Mar",
+      "ubigeo_code": 10112,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Miraflores",
+      "ubigeo_code": 10113,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Pueblo Libre",
+      "ubigeo_code": 10114,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Puente Piedra",
+      "ubigeo_code": 10115,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Rimac",
+      "ubigeo_code": 10116,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Isidro",
+      "ubigeo_code": 10117,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Independencia",
+      "ubigeo_code": 10118,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Juan de Miraflores",
+      "ubigeo_code": 10119,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Luis",
+      "ubigeo_code": 10120,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Martin de Porres",
+      "ubigeo_code": 10121,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Miguel",
+      "ubigeo_code": 10201,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Santiago de Surco",
+      "ubigeo_code": 10202,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Surquillo",
+      "ubigeo_code": 10203,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Villa María del Triunfo",
+      "ubigeo_code": 10204,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Juan de Lurigancho",
+      "ubigeo_code": 10205,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Santa Rosa",
+      "ubigeo_code": 10206,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Los Olivos",
+      "ubigeo_code": 10301,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "San Borja",
+      "ubigeo_code": 10302,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Villa El Savador",
+      "ubigeo_code": 10303,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Santa Anita",
+      "ubigeo_code": 10304,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Cercado Callao",
+      "ubigeo_code": 10305,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Bellavista",
+      "ubigeo_code": 10306,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Carmen de la Legua",
+      "ubigeo_code": 10307,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "La Perla",
+      "ubigeo_code": 10308,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "La Punta",
+      "ubigeo_code": 10309,
+      "subregion_id": 15
+    }
+  },
+  {
+    "model": "commons.District",
+    "fields": {
+      "name": "Ventanilla",
+      "ubigeo_code": 10309,
+      "subregion_id": 15
+    }
+  }
+]

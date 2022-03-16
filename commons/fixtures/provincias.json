@@ -1,0 +1,194 @@
+[
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+          "name": "Chachapoyas",
+          "ubigeo_code": 101,
+          "region_id":1
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huaraz",
+            "ubigeo_code": 201,
+            "region_id":2
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Abancay",
+            "ubigeo_code": 301,
+            "region_id": 3
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Arequipa",
+            "ubigeo_code": 401,
+            "region_id": 4
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huamanga",
+            "ubigeo_code": 501,
+            "region_id": 5
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Cajamarca",
+            "ubigeo_code": 601,
+            "region_id": 6
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Prov. Const. del Callao",
+            "ubigeo_code": 701,
+            "region_id": 7
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Cusco",
+            "ubigeo_code": 801,
+            "region_id": 8
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huancavelica",
+            "ubigeo_code": 901,
+            "region_id": 9
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huánuco",
+            "ubigeo_code": 902,
+            "region_id": 10
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Ica",
+            "ubigeo_code": 101,
+            "region_id": 11
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huancayo",
+            "ubigeo_code": 201,
+            "region_id": 12
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Trujillo",
+            "ubigeo_code": 301,
+            "region_id": 13
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Chiclayo",
+            "ubigeo_code": 401,
+            "region_id": 14
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Lima",
+            "ubigeo_code": 501,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Barranca",
+            "ubigeo_code": 502,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Cajatambo",
+            "ubigeo_code": 503,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Canta",
+            "ubigeo_code": 504,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Cañete",
+            "ubigeo_code": 505,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huaral",
+            "ubigeo_code": 506,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Huarochirí",
+            "ubigeo_code": 507,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields":  {
+            "name": "Huaura",
+            "ubigeo_code": 508,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Oyón",
+            "ubigeo_code": 509,
+            "region_id": 15
+        }
+    },
+    {
+        "model": "commons.SubRegion",
+        "fields": {
+            "name": "Yauyos",
+            "ubigeo_code": 510,
+            "region_id": 15
+        }
+    }
+]
