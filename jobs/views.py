@@ -1,14 +1,13 @@
 from rest_framework import status
+from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
-from postulant.permissions import IsPostulant
-from .models import WorkDay, WorkModality, WorkExperience, JobRole, WorkArea
+from companies.permissions import IsCompany
+from .models import WorkDay, WorkModality, WorkExperience, JobRole, WorkArea, Job
 from .serializers import WorkModalitySerializer, JobRoleSerializer, \
-    WorkAreaSerializer, WorkExperienceSerializer, WorkDaySerializer, PostulateToJobRegisterSerializer, \
-    PostulateToJobSerializer
+    WorkAreaSerializer, WorkExperienceSerializer, WorkDaySerializer, CreateJobterSerializer, JobSerializer
 
 
 class WorkDayViewSet(ModelViewSet):
@@ -41,12 +40,14 @@ class JobRoleViewSet(ModelViewSet):
     serializer_class = JobRoleSerializer
 
 
-class PostulateToJob(APIView):
-    permission_classes = (IsPostulant)
+class RegisterJobView(CreateAPIView):
+    permission_classes = (IsCompany,)
+    queryset = Job.objects.none()
+    serializer_class = CreateJobterSerializer
 
-    def post(self, request):
-        serializer = PostulateToJobRegisterSerializer(data=request.data)
+    def create(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        postulate = serializer.save()
-        serializer_data = PostulateToJobSerializer(postulate)
+        job = Job.objects.create(**serializer.data)
+        serializer_data = JobSerializer(job)
         return Response(serializer_data.data, status=status.HTTP_201_CREATED)

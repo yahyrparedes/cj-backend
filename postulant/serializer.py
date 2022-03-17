@@ -6,6 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework.validators import UniqueValidator
 
 from commons.serializers import GenderSerializer
+from jobs.models import Postulate, Job
+from jobs.serializers import JobSerializer
 from postulant.models import Postulant
 from users.models import User
 
@@ -46,3 +48,26 @@ class PostulantSerializer(serializers.ModelSerializer):
         model = Postulant
         fields = ('gender', 'document_type', 'document', 'created_at', 'email',
                   'date_of_birth', 'phone', 'is_active', 'avatar', 'name', 'last_name')
+
+
+class PostulateToJobRegisterSerializer(serializers.ModelSerializer):
+    job = serializers.IntegerField(required=True)
+
+    def validate_job(self, value):
+        if not Job.objects.filter(pk=value).exists():
+            raise serializers.ValidationError("Job don't exist!")
+        return value
+
+    class Meta:
+        model = Postulate
+        fields = ('job',)
+
+
+class PostulateToJobSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    job = JobSerializer()
+    postulant = PostulantSerializer()
+
+    class Meta:
+        model = Postulate
+        fields = ('id', 'job', 'postulant', 'is_active')

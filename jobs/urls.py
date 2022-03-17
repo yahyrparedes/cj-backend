@@ -1,8 +1,8 @@
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import SignUpCompanyApiView, SignInCompanyApiView, CompanyProfileView, BusinessSectorViewSet, \
-    WorkDayViewSet, WorkModalityViewSet, WorkExperienceViewSet, WorkAreaViewSet, JobRoleViewSet
+from .views import WorkDayViewSet, WorkModalityViewSet, WorkExperienceViewSet, WorkAreaViewSet, JobRoleViewSet, \
+    RegisterJobView
 
 router = routers.DefaultRouter()
 router.register('workday', WorkDayViewSet)
@@ -13,4 +13,5 @@ router.register('role', JobRoleViewSet)
 
 urlpatterns = [
     path('commons/', include(router.urls)),
+    path('create/', RegisterJobView.as_view()),
 ]

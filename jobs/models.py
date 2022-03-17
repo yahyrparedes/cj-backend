@@ -107,19 +107,31 @@ class JobRole(models.Model):
 
 class Job(models.Model):
     title = models.CharField(max_length=254)
-    description = models.TextField(max_length=254)
-    benefit = models.TextField(max_length=254)
-    requirements = models.TextField(max_length=254)
-    workday = models.ForeignKey(WorkDay, on_delete=models.CASCADE)
-    work_modality = models.ForeignKey(WorkModality, on_delete=models.CASCADE)
-    work_experience = models.ForeignKey(WorkExperience, on_delete=models.CASCADE)
-    work_area = models.ForeignKey(WorkArea, on_delete=models.CASCADE)
-    job_role = models.ForeignKey(JobRole, on_delete=models.CASCADE)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True)
+    description = models.TextField()
+    benefit = models.TextField()
+    requirements = models.TextField()
+    workday = models.ForeignKey(WorkDay, on_delete=models.CASCADE, null=True, blank=True)
+    work_modality = models.ForeignKey(WorkModality, on_delete=models.CASCADE, null=True, blank=True)
+    work_experience = models.ForeignKey(WorkExperience, on_delete=models.CASCADE, null=True, blank=True)
+    work_area = models.ForeignKey(WorkArea, on_delete=models.CASCADE, null=True, blank=True)
+    job_role = models.ForeignKey(JobRole, on_delete=models.CASCADE, null=True, blank=True)
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
+    is_active = models.BooleanField(default=True, verbose_name=("Is active"))
+    created_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=("Created At")
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=("Updated At")
+    )
+
+    def __str__(self):
+        return self.title
 
 
 class Postulate(models.Model):
-    job = models.ForeignKey(Job, on_delete=models.CASCADE),
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)
     postulant = models.ForeignKey(Postulant, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True, verbose_name=("Is active"))
     created_at = models.DateTimeField(

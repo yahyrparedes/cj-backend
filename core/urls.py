@@ -9,22 +9,23 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Console Jobs API",
-      default_version='v1',
-      description="Console Jobs the best platform whit job for you!",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=[permissions.AllowAny],
+    openapi.Info(
+        title="Console Jobs API",
+        default_version='v1',
+        description="Console Jobs the best platform whit job for you!",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="contact@snippets.local"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=[permissions.AllowAny],
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Django admin route
     path('api/company/', include("companies.urls")),  # UI Kits Html files
     path('api/postulant/', include("postulant.urls")),  # UI Kits Html files
+    path('api/job/', include("jobs.urls")),  # UI Kits Html files
     path('api/commons/', include("commons.urls")),  # UI Kits Html files
     path("", include("apps.home.urls")),  # UI Kits Html files
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),

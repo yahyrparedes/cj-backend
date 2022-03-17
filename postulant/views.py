@@ -10,9 +10,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from authentication.serializers import AuthTokenSerializer
+from jobs.models import Postulate
 from postulant.models import Postulant
 from postulant.permissions import IsPostulant
-from postulant.serializer import PostulantSerializer, SignUpPostulantSerializer
+from postulant.serializer import PostulantSerializer, SignUpPostulantSerializer, PostulateToJobRegisterSerializer, \
+    PostulateToJobSerializer
 from users.models import User
 
 
@@ -77,3 +79,16 @@ class PostulantProfileView(RetrieveUpdateAPIView):
 
     def get_object(self, *args, **kwargs):
         return self.request.user.postulant
+
+
+class PostulateToJobView(CreateAPIView):
+    permission_classes = (IsPostulant,)
+    queryset = Postulant.objects.none()
+    serializer_class = PostulateToJobRegisterSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        postulant = Postulate.objects.create(job_id=serializer.data.get('job'), postulant=request.user.postulant)
+        serializer_data = PostulateToJobSerializer(postulant)
+        return Response(serializer_data.data, status=status.HTTP_201_CREATED)
