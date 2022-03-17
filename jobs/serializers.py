@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from commons.models import Address
+from companies.serializers import CompanySerializer, CompanyPublicSerializer
 from .models import WorkDay, WorkModality, WorkExperience, WorkArea, JobRole, Postulate, Job
 
 
@@ -89,6 +90,17 @@ class CreateJobterSerializer(serializers.ModelSerializer):
 
 class JobSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = Job
+        fields = ('id', 'company', 'title', 'description', 'benefit', 'requirements',
+                  'workday', 'work_modality', 'work_experience', 'work_area',
+                  'job_role', 'address', 'is_active')
+
+
+class JobPublicSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True)
+    company = CompanyPublicSerializer()
 
     class Meta:
         model = Job

@@ -10,7 +10,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from authentication.serializers import AuthTokenSerializer
-from jobs.models import Postulate
+from jobs.models import Postulate, Job
+from jobs.serializers import JobSerializer
 from postulant.serializer import PostulateToJobRegisterSerializer, \
     PostulateToJobSerializer
 
@@ -131,3 +132,12 @@ class UploadCurriculumView(APIView):
             'status': 'success',
             'data': postulantSerializer.data
         }, status=201)
+
+
+class PostulantJobsView(APIView):
+    permission_classes = (IsPostulant,)
+
+    def get(self, request, *args, **kwargs):
+        jobs = Postulate.objects.filter(is_active=True, postulant=request.user.postulant)
+        serializer = PostulateToJobSerializer(jobs, many=True)
+        return Response(serializer.data)

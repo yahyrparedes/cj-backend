@@ -13,6 +13,9 @@
 					"item": [
 						{
 							"name": "signin",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -93,6 +96,42 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "My Jobs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 5078a829cec4e6ab61c337e8ed46a7c921b90928",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Soft Developer\",\n    \"description\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n     \"benefit\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n      \"requirements\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/job",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"job"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -109,7 +148,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"postulant@gmail.com\" ,\n  \"password\": \"Lima123456\"\n}",
+									"raw": "{\n  \"email\": \"postulant1@gmail.com\" ,\n  \"password\": \"Lima123456\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -164,6 +203,17 @@
 					"name": "Profile",
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Authorization",
@@ -171,6 +221,15 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"gender\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{url}}/api/postulant/profile",
 							"host": [
@@ -182,15 +241,6 @@
 								"profile"
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": null
 					},
 					"response": []
 				},
@@ -207,7 +257,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"job\": 1\n}",
+							"raw": "{\n    \"job\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -223,6 +273,43 @@
 								"api",
 								"postulant",
 								"postulate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Postulations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token ceab07cfad5aa66672f55d3405db5426f2ca5fab",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Soft Developer\",\n    \"description\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n     \"benefit\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n      \"requirements\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/postulant/jobs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"postulant",
+								"jobs"
 							]
 						}
 					},
@@ -349,15 +436,51 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/api/job/create/",
+							"raw": "{{url}}/api/job/create",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"job",
-								"create",
-								""
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 5078a829cec4e6ab61c337e8ed46a7c921b90928",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Soft Developer\",\n    \"description\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n     \"benefit\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n      \"requirements\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/job/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"job",
+								"list"
 							]
 						}
 					},

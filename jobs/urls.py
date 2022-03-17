@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from .views import WorkDayViewSet, WorkModalityViewSet, WorkExperienceViewSet, WorkAreaViewSet, JobRoleViewSet, \
-    RegisterJobView
+    RegisterJobView, JobsView
 
 router = routers.DefaultRouter()
 router.register('workday', WorkDayViewSet)
@@ -13,5 +13,6 @@ router.register('role', JobRoleViewSet)
 
 urlpatterns = [
     path('commons/', include(router.urls)),
-    path('create/', RegisterJobView.as_view()),
+    path('create', RegisterJobView.as_view()),
+    path('list', JobsView.as_view())
 ]

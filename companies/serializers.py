@@ -6,6 +6,7 @@ from commons.serializers import AddressSerializer
 from users.models import User
 from .models import Company, BusinessSector
 
+
 class BusinessSectorSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
 
@@ -19,7 +20,7 @@ class SignUpCompanySerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required=True,
         max_length=254,
-        validators=[  UniqueValidator(queryset=User.objects.all())]
+        validators=[UniqueValidator(queryset=User.objects.all())]
     )
     password = serializers.CharField(
         required=True,
@@ -63,3 +64,8 @@ class CompanySerializer(serializers.ModelSerializer):
                   'phone', 'business_sector', 'about', 'foundation_year',
                   'address', 'is_active', 'created_at',)
 
+
+class CompanyPublicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Company
+        fields = ('business_name', 'tradename', 'business_sector', 'address',)

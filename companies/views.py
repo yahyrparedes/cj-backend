@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
 from authentication.serializers import AuthTokenSerializer
+from jobs.models import Job
+from jobs.serializers import JobSerializer
 from users.models import User
 from .models import Company, BusinessSector
 from .permissions import IsCompany
@@ -79,3 +81,12 @@ class CompanyProfileView(RetrieveUpdateAPIView):
 
     def get_object(self, *args, **kwargs):
         return self.request.user.company
+
+
+class CompanyJobsView(APIView):
+    permission_classes = (IsCompany,)
+
+    def get(self, requests):
+        jobs = Job.objects.filter(company=requests.user.company)
+        serializer = JobSerializer(jobs, many=True)
+        return Response(serializer.data)
