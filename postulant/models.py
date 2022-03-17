@@ -7,6 +7,31 @@ from django.utils.functional import cached_property
 from commons.models import Gender, DocumentType
 from users.models import User
 
+class Curriculum(models.Model):
+
+    class Meta:
+        verbose_name = ("File")
+        verbose_name_plural = ("Files")
+
+    name = models.CharField(
+        max_length=100,
+        verbose_name=('Nombre')
+    )
+
+    name_original = models.CharField(
+        max_length=100,
+        verbose_name=('Nombre original')
+    )
+
+    format = models.CharField(
+        max_length=100,
+        verbose_name=('Formato')
+    )
+
+    url = models.CharField(
+        max_length=250,
+        verbose_name=('URL')
+    )
 
 class Postulant(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True,
@@ -21,6 +46,13 @@ class Postulant(models.Model):
     )
     phone = models.CharField(max_length=20, blank=True)
     is_active = models.BooleanField(default=True, verbose_name=("Is active"))
+    curriculum = models.ForeignKey(
+        Curriculum,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        verbose_name=('Curriculum')
+    )
     created_at = models.DateTimeField(
         auto_now=True,
         verbose_name=("Created At")
@@ -46,3 +78,4 @@ class Postulant(models.Model):
     def delete(self, *args, **kwargs):
         self.is_active = False
         self.save()
+        

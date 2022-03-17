@@ -1,6 +1,9 @@
 import os
 from decouple import config
 from unipath import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parent
@@ -34,6 +37,7 @@ INSTALLED_APPS = [
     'companies',
     'jobs',
     'apps.home',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -139,3 +143,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+
+# CLOUDINARY
+
+cloudinary.config( 
+  cloud_name = "dhhsap4av", 
+  api_key = "598425753988519", 
+  api_secret = "ttZYwXELVrUuSRLHccSgopbURgw" 
+)
