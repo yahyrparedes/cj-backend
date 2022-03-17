@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from .views import SignUpCompanyApiView, SignInCompanyApiView, CompanyProfileView, BusinessSectorViewSet, \
-    CompanyViewSet, WorkDayViewSet, WorkModalityViewSet, WorkExperienceViewSet, WorkAreaViewSet, JobRoleViewSet
+    WorkDayViewSet, WorkModalityViewSet, WorkExperienceViewSet, WorkAreaViewSet, JobRoleViewSet
 
 router = routers.DefaultRouter()
 router.register('bussiness', BusinessSectorViewSet)
