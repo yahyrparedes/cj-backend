@@ -15,36 +15,43 @@ from .serializers import SignUpCompanySerializer, CompanySerializer
 
 
 class BusinessSectorViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = BusinessSector.objects.filter(is_active=True)
     serializer_class = BusinessSector
 
 
 class CompanyViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = Company.objects.filter(is_active=True)
     serializer_class = Company
 
 
 class WorkDayViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = WorkDay.objects.filter(is_active=True)
     serializer_class = WorkDay
 
 
 class WorkModalityViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = WorkModality.objects.filter(is_active=True)
     serializer_class = WorkModality
 
 
 class WorkExperienceViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = WorkExperience.objects.filter(is_active=True)
     serializer_class = WorkExperience
 
 
 class WorkAreaViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = WorkArea.objects.filter(is_active=True)
     serializer_class = WorkArea
 
 
 class JobRoleViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
     queryset = JobRole.objects.filter(is_active=True)
     serializer_class = JobRole
 
