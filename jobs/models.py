@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from commons.models import Address
+from postulant.models import Postulant
 
 
 class WorkDay(models.Model):
@@ -115,3 +116,20 @@ class Job(models.Model):
     work_area = models.ForeignKey(WorkArea, on_delete=models.CASCADE)
     job_role = models.ForeignKey(JobRole, on_delete=models.CASCADE)
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True)
+
+
+class Postulate(models.Model):
+    job = models.ForeignKey(Job, on_delete=models.CASCADE),
+    postulant = models.ForeignKey(Postulant, on_delete=models.CASCADE)
+    is_active = models.BooleanField(default=True, verbose_name=("Is active"))
+    created_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=("Created At")
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name=("Updated At")
+    )
+
+    def __str__(self):
+        return f'{self.postulant} {self.job}'
