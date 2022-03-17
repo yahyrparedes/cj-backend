@@ -1,49 +1,23 @@
 # Create your views here.
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.commons.models import Gender, DocumentType, Country, Region, SubRegion, District
-from apps.commons.serializers import GenderSerializer, DocumentTypeSerializer, CountrySerializer, RegionSerializer, \
+from commons.models import Gender, DocumentType, Country, Region, SubRegion, District
+from commons.serializers import GenderSerializer, DocumentTypeSerializer, CountrySerializer, RegionSerializer, \
     SubRegionSerializer, DistrictSerializer
 
 from rest_framework import viewsets
 
 
-class GenderListView(APIView):
-
-    # GET
-    def get(self, request):
-        gender = Gender.objects.filter(is_active=True)  # QuerySet
-        serializer = GenderSerializer(gender, many=True)  # Many=lista=muchos
-        return Response(serializer.data)
-
-    def post(self):
-        pass
-
-    def put(self):
-        pass
-
-    def delete(self):
-        pass
+class GenderListViewSet(viewsets.ModelViewSet):
+    queryset = Gender.objects.filter(is_active=True)
+    serializer_class = GenderSerializer
 
 
-# class DocumentTypeListView(APIView):
-#     def get(self, request):
-#         # document_type = DocumentType.objects.all()
-#         document_type = DocumentType.objects.filter(is_active=True)
-#         serializer = DocumentTypeSerializer(document_type, many=True)
-#         return Response(serializer.data)
-
-class DocumentTypeViewSet(viewsets.ModelViewSet):
-    queryset = DocumentType.objects.all()
+class DocumentTypeView(viewsets.ModelViewSet):
+    queryset = DocumentType.objects.filter(is_active=True)
     serializer_class = DocumentTypeSerializer
-
-
-# GET  country/ -> lista de paises
-# POST country/ -> registro
-# PUT  country/{id}/  -> actualizar un elemento
-# GET  country/{id}/  -> detalle de un elemento
-# DELETE country/{id}/ -> eliminar elimancion - fisica
 
 
 class CountryView(viewsets.ModelViewSet):
@@ -64,3 +38,39 @@ class SubRegionView(viewsets.ModelViewSet):
 class DistrictView(viewsets.ModelViewSet):
     queryset = District.objects.all()
     serializer_class = DistrictSerializer
+
+
+class UbigeoCountryView(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request):
+        countries = Country.objects.filter()
+        serializer = CountrySerializer(countries, many=True)
+        return Response(serializer.data)
+
+
+class UbigeoRegionView(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request, pk):
+        regions = Region.objects.filter(country_id=pk)
+        serializer = RegionSerializer(regions, many=True)
+        return Response(serializer.data)
+
+
+class UbigeoSubRegionView(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request, pk):
+        sub_regions = SubRegion.objects.filter(region_id=pk)
+        serializer = SubRegionSerializer(sub_regions, many=True)
+        return Response(serializer.data)
+
+
+class UbigeoDistricView(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request, pk):
+        districts = District.objects.filter(subregion_id=pk)
+        serializer = DistrictSerializer(districts, many=True)
+        return Response(serializer.data)

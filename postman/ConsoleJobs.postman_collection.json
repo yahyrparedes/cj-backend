@@ -46,7 +46,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"company@gmail.com\" ,\n    \"password\": \"Lima123456\" ,\n    \"ruc\": \"10738840718\" ,\n    \"business_name\": \"YAHYR ENRIQUE PAREDES ARTEAGA\",\n    \"tradename\":  \"KillerYpa\",\n    \"description\":  \"Empresa de videojuegos!\"\n}",
+									"raw": "{\n    \"email\": \"company@gmail.com\" ,\n    \"password\": \"Lima123456\" ,\n    \"ruc\": \"10738840718\" ,\n    \"business_name\": \"YAHYR ENRIQUE PAREDES ARTEAGA\",\n    \"tradename\":  \"KillerYpa\",\n    \"about\":  \"Empresa de videojuegos!\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -137,7 +137,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\": \"postulant@gmail.com\" ,\n    \"password\": \"Lima123456\" ,\n     \"name\":\"Postulant Name\",\n     \"last_name\": \"Postulant LastName\"\n}",
+									"raw": "{\n    \"email\": \"postulant1@gmail.com\" ,\n    \"password\": \"Lima123456\" ,\n     \"name\":\"Postulant Name\",\n     \"last_name\": \"Postulant LastName\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -184,6 +184,110 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ubigeo",
+			"item": [
+				{
+					"name": "country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/commons/ubigeo/country/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"commons",
+								"ubigeo",
+								"country",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "region",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/commons/ubigeo/country/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"commons",
+								"ubigeo",
+								"country",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sub-region",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/commons/ubigeo/country/region/15/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"commons",
+								"ubigeo",
+								"country",
+								"region",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "district",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/commons/ubigeo/country/region/subregion/15/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"commons",
+								"ubigeo",
+								"country",
+								"region",
+								"subregion",
+								"15",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -212,6 +316,11 @@
 		{
 			"key": "url",
 			"value": ""
+		},
+		{
+			"key": "url",
+			"value": "",
+			"disabled": true
 		}
 	]
 }

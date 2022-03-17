@@ -6,9 +6,7 @@
             "alpha2code": "PE",
             "alpha3code": "PER",
             "numeric_code": 604 ,
-            "phone_prefix": 51,
-            "currency":"Sol",
-            "currency_prefix":"S/"
+            "phone_prefix": 51
         }
     },
     {
@@ -18,9 +16,7 @@
             "alpha2code": "CL",
             "alpha3code": "CHL",
             "numeric_code": 152,
-            "phone_prefix": 56,
-            "currency":"Peso Chileno",
-            "currency_prefix":"$"
+            "phone_prefix": 56
         }
     }
 ]

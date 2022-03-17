@@ -1,12 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Gender, DocumentType, Country, Region, SubRegion, District, Category
+from .models import Gender, DocumentType, Country, Region, SubRegion, District
 
-
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'image')
 
 @admin.register(Gender)
 class GenderAdmin(admin.ModelAdmin):
@@ -28,6 +24,7 @@ class CountryAdmin(admin.ModelAdmin):
         'phone_prefix',
     ]
 
+
 @admin.register(Region)
 class RegionAdmin(admin.ModelAdmin):
     list_display = [
@@ -35,6 +32,7 @@ class RegionAdmin(admin.ModelAdmin):
         'ubigeo_code',
         'country'
     ]
+
 
 @admin.register(SubRegion)
 class SubRegionAdmin(admin.ModelAdmin):
