@@ -1,0 +1,50 @@
+[
+    {
+        "model": "companies.WorkArea",
+        "fields": {
+          "name": "Tecnología",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkArea",
+        "fields": {
+          "name": "Infraestructura",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkArea",
+        "fields": {
+          "name": "Desarrollo de Software",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkArea",
+        "fields": {
+          "name": "Administración de Redes",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkArea",
+        "fields": {
+          "name": "Administración de Base de Datos",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkArea",
+        "fields": {
+          "name": "Auditoría",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    }
+]

@@ -1,0 +1,130 @@
+[
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Petróleo/Gas",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Retail",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Servicios financieros",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Minería",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Servicios de salud",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Alimentos",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Telecomunicaciones",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Bienes de Consumo",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Bebidas/Licores",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Cemento",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Energia eléctrica",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Electrónica",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Siderurgía/Metalurgia",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Automotriz/Autopartes",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Sanitarias",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.BusinessSector",
+        "fields": {
+          "name": "Pesca",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    }
+]
