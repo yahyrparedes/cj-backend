@@ -6,4 +6,4 @@ from companies.models import Company
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('user', 'ruc', 'business_name', 'tradename', 'is_active')

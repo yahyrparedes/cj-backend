@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Gender, DocumentType, Country, Region, SubRegion, District
+from .models import Gender, DocumentType, Country, Region, SubRegion, District, Address
 
 
 @admin.register(Gender)
@@ -12,6 +12,10 @@ class GenderAdmin(admin.ModelAdmin):
 @admin.register(DocumentType)
 class DocumentTypeAdmin(admin.ModelAdmin):
     list_display = ('long_name', 'short_name', 'character_length', 'type_character', 'is_active')
+
+@admin.register(Address)
+class DocumentTypeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'id', 'reference', 'country', 'sub_region', 'district')
 
 
 @admin.register(Country)
