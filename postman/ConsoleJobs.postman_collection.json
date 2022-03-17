@@ -76,7 +76,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "token 8710b471a6c188a60b58ba633c22bbc99fd55031",
+								"value": "token b64785eac8e620c4bc87f4b1fb52c7889998b3e1",
 								"type": "text"
 							}
 						],
@@ -193,6 +193,40 @@
 						"url": null
 					},
 					"response": []
+				},
+				{
+					"name": "Postulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token ceab07cfad5aa66672f55d3405db5426f2ca5fab",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"job\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/postulant/postulate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"postulant",
+								"postulate"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -283,6 +317,46 @@
 								"region",
 								"subregion",
 								"15",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "token 5078a829cec4e6ab61c337e8ed46a7c921b90928",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Soft Developer\",\n    \"description\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n     \"benefit\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\",\n      \"requirements\": \"JSON parse error - Expecting property name enclosed in double quotes: line 6 column 1 (char 87)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/job/create/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"job",
+								"create",
 								""
 							]
 						}
