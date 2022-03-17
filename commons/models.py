@@ -39,28 +39,6 @@ class Faq(models.Model):
     )
 
 
-class Category(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.TextField()
-    image = models.ImageField(
-        upload_to="core/static/images/category/",
-        default='core/static/images/category/default.png',
-    )
-    father = models.ForeignKey('Category', on_delete=models.CASCADE)
-    is_active = models.BooleanField(
-        default=True,
-        verbose_name=("Is active")
-    )
-    created_at = models.DateTimeField(
-        auto_now=True,
-        verbose_name=("Created At")
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True,
-        verbose_name=("Updated At")
-    )
-
-
 class BasePlace(models.Model):
     name = models.CharField(
         _('Nombre'),

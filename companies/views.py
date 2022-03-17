@@ -1,7 +1,3 @@
-from django.contrib.auth import authenticate
-from django.shortcuts import render
-
-# Create your views here.
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import PermissionDenied
@@ -9,13 +5,50 @@ from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import ModelViewSet
 
 from authentication.serializers import AuthTokenSerializer
 from users.models import User
-from .models import Company
+from .models import Company, BusinessSector, WorkDay, WorkModality, WorkExperience, JobRole, WorkArea
 from .permissions import IsCompany
-from .serializers import SignUpCompanySerializer, CompanySerializer
+from .serializers import SignUpCompanySerializer, CompanySerializer, WorkModalitySerializer, JobRoleSerializer, \
+    WorkAreaSerializer, WorkExperienceSerializer, BusinessSectorSerializer, WorkDaySerializer
+
+
+class BusinessSectorViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
+    queryset = BusinessSector.objects.filter(is_active=True)
+    serializer_class = BusinessSectorSerializer
+
+
+class WorkDayViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
+    queryset = WorkDay.objects.filter(is_active=True)
+    serializer_class = WorkDaySerializer
+
+
+class WorkModalityViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
+    queryset = WorkModality.objects.filter(is_active=True)
+    serializer_class = WorkModalitySerializer
+
+
+class WorkExperienceViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
+    queryset = WorkExperience.objects.filter(is_active=True)
+    serializer_class = WorkExperienceSerializer
+
+
+class WorkAreaViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
+    queryset = WorkArea.objects.filter(is_active=True)
+    serializer_class = WorkAreaSerializer
+
+
+class JobRoleViewSet(ModelViewSet):
+    permission_classes = (AllowAny,)
+    queryset = JobRole.objects.filter(is_active=True)
+    serializer_class = JobRoleSerializer
 
 
 class SignInCompanyApiView(APIView):

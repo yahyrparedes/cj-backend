@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Django admin route
     path('api/company/', include("companies.urls")),  # UI Kits Html files
     path('api/postulant/', include("postulant.urls")),  # UI Kits Html files
+    path('api/commons/', include("commons.urls")),  # UI Kits Html files
     path("", include("apps.home.urls")),  # UI Kits Html files
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
