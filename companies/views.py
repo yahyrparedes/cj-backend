@@ -1,7 +1,3 @@
-from django.contrib.auth import authenticate
-from django.shortcuts import render
-
-# Create your views here.
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import PermissionDenied
@@ -9,13 +5,48 @@ from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import ModelViewSet
 
 from authentication.serializers import AuthTokenSerializer
 from users.models import User
-from .models import Company
+from .models import Company, BusinessSector, WorkDay, WorkModality, WorkExperience, JobRole, WorkArea
 from .permissions import IsCompany
 from .serializers import SignUpCompanySerializer, CompanySerializer
+
+
+class BusinessSectorViewSet(ModelViewSet):
+    queryset = BusinessSector.objects.filter(is_active=True)
+    serializer_class = BusinessSector
+
+
+class CompanyViewSet(ModelViewSet):
+    queryset = Company.objects.filter(is_active=True)
+    serializer_class = Company
+
+
+class WorkDayViewSet(ModelViewSet):
+    queryset = WorkDay.objects.filter(is_active=True)
+    serializer_class = WorkDay
+
+
+class WorkModalityViewSet(ModelViewSet):
+    queryset = WorkModality.objects.filter(is_active=True)
+    serializer_class = WorkModality
+
+
+class WorkExperienceViewSet(ModelViewSet):
+    queryset = WorkExperience.objects.filter(is_active=True)
+    serializer_class = WorkExperience
+
+
+class WorkAreaViewSet(ModelViewSet):
+    queryset = WorkArea.objects.filter(is_active=True)
+    serializer_class = WorkArea
+
+
+class JobRoleViewSet(ModelViewSet):
+    queryset = JobRole.objects.filter(is_active=True)
+    serializer_class = JobRole
 
 
 class SignInCompanyApiView(APIView):
