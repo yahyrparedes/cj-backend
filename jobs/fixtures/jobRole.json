@@ -1,6 +1,6 @@
 [
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Arquitecto de Inteligencia Artificial",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Analista de inteligencia de negocio",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -16,7 +16,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Arquitecto cloud",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -24,7 +24,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Especialistas en datos",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -32,7 +32,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Desarrollador web, de software y para móviles",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -40,7 +40,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Ingeniero DevOps",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -48,7 +48,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Profesional de asistencia y soporte técnico",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -56,7 +56,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Administrador de red o cloud",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -64,7 +64,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Profesional de seguridad",
           "created_at":"2022-03-16 19:50:29.354630",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "model": "companies.JobRole",
+        "model": "jobs.JobRole",
         "fields": {
           "name": "Administrador de sistemas",
           "created_at":"2022-03-16 19:50:29.354630",

@@ -1,7 +1,7 @@
 # Django Rest Framework
 from rest_framework import serializers
 
-from .models import Gender, DocumentType, Country, Region, SubRegion, District
+from .models import Gender, DocumentType, Country, Region, SubRegion, District, Address
 
 
 class GenderSerializer(serializers.ModelSerializer):
@@ -53,9 +53,9 @@ class AddressSerializer(serializers.ModelSerializer):
     country = CountrySerializer()
     region = RegionSerializer()
     sub_region = SubRegionSerializer()
-    DistrictSerializer = DistrictSerializer()
+    district = DistrictSerializer()
 
     class Meta:
-        model = Gender
+        model = Address
         fields = ('id', 'name', 'reference', 'country', 'region',
                   'sub_region', 'district')

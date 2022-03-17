@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'users',
     'postulant',
     'companies',
+    'jobs',
     'apps.home',
 ]
 

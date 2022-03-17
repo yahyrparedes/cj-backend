@@ -4,8 +4,7 @@ from rest_framework.validators import UniqueValidator
 
 from commons.serializers import AddressSerializer
 from users.models import User
-from .models import Company, BusinessSector, WorkDay, WorkModality, WorkExperience, WorkArea, JobRole
-
+from .models import Company, BusinessSector
 
 class BusinessSectorSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
@@ -64,42 +63,3 @@ class CompanySerializer(serializers.ModelSerializer):
                   'phone', 'business_sector', 'about', 'foundation_year',
                   'address', 'is_active', 'created_at',)
 
-
-class WorkDaySerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-
-    class Meta:
-        model = WorkDay
-        fields = '__all__'
-
-
-class WorkModalitySerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-
-    class Meta:
-        model = WorkModality
-        fields = '__all__'
-
-
-class WorkExperienceSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-
-    class Meta:
-        model = WorkExperience
-        fields = '__all__'
-
-
-class WorkAreaSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-
-    class Meta:
-        model = WorkArea
-        fields = '__all__'
-
-
-class JobRoleSerializer(serializers.ModelSerializer):
-    id = serializers.IntegerField(read_only=True)
-
-    class Meta:
-        model = JobRole
-        fields = '__all__'
