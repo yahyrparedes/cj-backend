@@ -1,15 +1,23 @@
-from django.contrib.auth import authenticate
 from rest_framework import serializers
-from rest_framework.authtoken.models import Token
 from django.contrib.auth.password_validation import validate_password
-from django.utils.translation import gettext_lazy as _
 from rest_framework.validators import UniqueValidator
 
-from commons.serializers import GenderSerializer
 from jobs.models import Postulate, Job
 from jobs.serializers import JobSerializer
-from postulant.models import Postulant
+from postulant.models import Curriculum, Postulant
 from users.models import User
+
+
+class CurriculumSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Curriculum
+        fields = (
+            'pk',
+            'name',
+            'name_original',
+            'format',
+            'url'
+        )
 
 
 class SignUpPostulantSerializer(serializers.ModelSerializer):
@@ -43,11 +51,15 @@ class PostulantSerializer(serializers.ModelSerializer):
     email = serializers.CharField(source='user.email')
     name = serializers.CharField(source='user.first_name')
     last_name = serializers.CharField(source='user.last_name')
+    curriculum = CurriculumSerializer(read_only=True)
+    curriculum_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = Postulant
-        fields = ('gender', 'document_type', 'document', 'created_at', 'email',
-                  'date_of_birth', 'phone', 'is_active', 'avatar', 'name', 'last_name')
+        # fields = ('gender', 'document_type', 'document', 'created_at', 'email',
+        #           'date_of_birth', 'phone', 'is_active', 'avatar', 'name', 'last_name')
+        fields = ('pk', 'gender', 'document_type', 'document', 'created_at', 'email',
+                  'date_of_birth', 'phone', 'is_active', 'avatar', 'name', 'last_name', 'curriculum', 'curriculum_id')
 
 
 class PostulateToJobRegisterSerializer(serializers.ModelSerializer):

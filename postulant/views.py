@@ -11,11 +11,15 @@ from rest_framework.views import APIView
 
 from authentication.serializers import AuthTokenSerializer
 from jobs.models import Postulate
-from postulant.models import Postulant
-from postulant.permissions import IsPostulant
-from postulant.serializer import PostulantSerializer, SignUpPostulantSerializer, PostulateToJobRegisterSerializer, \
+from postulant.serializer import PostulateToJobRegisterSerializer, \
     PostulateToJobSerializer
+
+from postulant.models import Curriculum, Postulant
+from postulant.permissions import IsPostulant, IsAuthenticated
+from postulant.serializer import CurriculumSerializer, PostulantSerializer, SignUpPostulantSerializer
+
 from users.models import User
+import cloudinary.uploader
 
 
 class SignInPostulantApiView(APIView):
@@ -92,3 +96,38 @@ class PostulateToJobView(CreateAPIView):
         postulant = Postulate.objects.create(job_id=serializer.data.get('job'), postulant=request.user.postulant)
         serializer_data = PostulateToJobSerializer(postulant)
         return Response(serializer_data.data, status=status.HTTP_201_CREATED)
+
+
+class UploadCurriculumView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    @staticmethod
+    def patch(request, pk):
+
+        file = request.data.get('cv')
+        upload_data = cloudinary.uploader.upload(file)
+
+        curriculum = CurriculumSerializer(data={
+            "name": upload_data.get('public_id'),
+            "name_original": upload_data.get('original_filename'),
+            "format": upload_data.get('format'),
+            "url": upload_data.get('url')
+        })
+
+        if curriculum.is_valid():
+            curriculum.save()
+
+        curriculum_id = Curriculum.objects.filter(pk=int(curriculum.data.get('pk'))).first()
+
+        postulant = Postulant.objects.get(pk=pk)
+        postulant_file = {
+            "curriculum_id": curriculum_id.id
+        }
+        postulantSerializer = PostulantSerializer(postulant, data=postulant_file, partial=True)
+        if postulantSerializer.is_valid():
+            postulantSerializer.save()
+
+        return Response({
+            'status': 'success',
+            'data': postulantSerializer.data
+        }, status=201)

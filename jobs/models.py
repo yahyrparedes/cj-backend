@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from commons.models import Address
+from companies.models import Company
 from postulant.models import Postulant
 
 
@@ -116,6 +117,7 @@ class Job(models.Model):
     work_area = models.ForeignKey(WorkArea, on_delete=models.CASCADE, null=True, blank=True)
     job_role = models.ForeignKey(JobRole, on_delete=models.CASCADE, null=True, blank=True)
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE )
     is_active = models.BooleanField(default=True, verbose_name=("Is active"))
     created_at = models.DateTimeField(
         auto_now=True,

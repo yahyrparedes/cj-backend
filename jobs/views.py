@@ -48,6 +48,6 @@ class RegisterJobView(CreateAPIView):
     def create(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
-        job = Job.objects.create(**serializer.data)
+        job = Job.objects.create(company=request.user.company, **serializer.data)
         serializer_data = JobSerializer(job)
         return Response(serializer_data.data, status=status.HTTP_201_CREATED)
