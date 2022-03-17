@@ -1,0 +1,66 @@
+[
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "Sin experiencia",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "Menos de 1 año",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "1 año",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "2 años",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "3 años",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "4 años",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "5 años",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    },
+    {
+        "model": "companies.WorkExperience",
+        "fields": {
+          "name": "mas de 6 años",
+          "created_at":"2022-03-16 19:50:29.354630",
+          "updated_at":"2022-03-16 19:50:29.354630"
+        }
+    }
+]
