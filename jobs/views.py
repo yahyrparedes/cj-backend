@@ -62,3 +62,12 @@ class JobsView(APIView):
         jobs = Job.objects.filter(is_active=True)
         serializer = JobPublicSerializer(jobs, many=True)
         return Response(serializer.data)
+
+
+class JobDetailView(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request, pk):
+        jobs = Job.objects.filter(pk=pk, is_active=True).first()
+        serializer = JobPublicSerializer(jobs)
+        return Response(serializer.data)
